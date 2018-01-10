@@ -47,14 +47,9 @@ namespace tl {
 	struct remove_impl<Type, type_list<Head>, All> {
 		using type = type_list<Head>;
 	};
-
-	template<typename Type>
-	struct remove_impl<Type, type_list<Type>, true>  {
-		using type = type_list<>;
-	};
-
-	template<typename Type>
-	struct remove_impl<Type, type_list<Type>, false>  {
+	
+	template<typename Type, bool All>
+	struct remove_impl<Type, type_list<Type>, All>  {
 		using type = type_list<>;
 	};
 
