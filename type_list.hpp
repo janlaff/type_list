@@ -50,7 +50,7 @@ namespace tl {
 
 	template<typename Type>
 	struct remove_impl<Type, type_list<Type>, true>  {
-		using type = type_list<std::nullptr_t>;
+		using type = type_list<>;
 	};
 
 	template<typename Type>
